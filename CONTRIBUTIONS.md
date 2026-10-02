@@ -113,14 +113,52 @@ Two upstream gnark changes credit my optimization ideas. Youssef El Housni imple
 
 PR #1173 reports savings of 681,769 SCS constraints or 199,105 R1CS constraints per pairing. These are constraint counts, not runtime measurements.
 
-## Noir/Honk, Kakarot, Keth, and Bitcoin tooling
+## Kakarot / Keth: cryptographic precompiles and Cairo performance
+
+My contributions span the original Kakarot zkEVM, its Cairo rewrite Kakarot-SSJ, and Keth's Ethereum proving backend.
+
+I developed cryptographic arithmetic and execution optimizations. Maintainers also incorporated my code and adopted Garaga in separate integration PRs.
+
+| Area | My contribution | Evidence and status |
+| --- | --- | --- |
+| Early `ecRecover` work | A maintainer publicly credited my initial implementation work. Clément Walter finalized the integration. | [Maintainer credit](https://github.com/kkrt-labs/kakarot/issues/357#issuecomment-1369202458), [integration #407](https://github.com/kkrt-labs/kakarot/pull/407), merged January 2023. |
+| EVM jump destinations | Optimized `get_jumpdests` by reducing repeated comparisons, with a constraint at loop termination. | [Kakarot #1034](https://github.com/kkrt-labs/kakarot/pull/1034), authored by me and merged March 2024. |
+| `uint256_add` / `uint256_sub` | Developed faster arithmetic that Clément Walter incorporated with tests. | [Original work #1049](https://github.com/kkrt-labs/kakarot/pull/1049), [credited integration #1070](https://github.com/kkrt-labs/kakarot/pull/1070), merged April 2024. |
+| ModExp constraint correctness | Fixed an underconstrained bit-length hint and its access to a table of powers of two. | [Kakarot #1199](https://github.com/kkrt-labs/kakarot/pull/1199), authored by me and merged June 2024. |
+| BN254 elliptic-curve arithmetic | Implemented addition, doubling, scalar multiplication, point-at-infinity handling, and u384/u256 conversions with Cairo circuits. | [Kakarot-SSJ #855](https://github.com/kkrt-labs/kakarot-ssj/pull/855), authored by me and merged August 2024. |
+| Performance review | Reviewed binary recomposition using Horner's method and a local constant. | [Public review on Keth #1116](https://github.com/kkrt-labs/keth/pull/1116#pullrequestreview-2730701134), submitted March 2025. |
+| Modular-arithmetic experiments | Contributed Cairo modular add/subtract code and tests in the Kakarot Cairo VM fork. | [kkrt-labs/cairo-vm #5](https://github.com/kkrt-labs/cairo-vm/pull/5), authored by me and merged December 2023. |
+
+The BN254 arithmetic in #855 supplied the primitives for the EVM wrappers. Obatirou added those wrappers in [Kakarot-SSJ #880](https://github.com/kkrt-labs/kakarot-ssj/pull/880).
+
+### Reported performance improvements
+
+| Operation | Reported change | Source |
+| --- | --- | --- |
+| `uint256_add` | **22 → 10 Cairo steps** | [Merged Kakarot #1070](https://github.com/kkrt-labs/kakarot/pull/1070) |
+| `uint256_sub` | **~60 → 13 Cairo steps** | [Merged Kakarot #1070](https://github.com/kkrt-labs/kakarot/pull/1070) |
+
+These are historical measurements reported in the PRs. Their scope is the listed operation, rather than the whole zkEVM.
+
+### Garaga adoption and pairing research
+
+Keth adopted Garaga for its BN254 pairing precompile in [#1339](https://github.com/kkrt-labs/keth/pull/1339), merged April 2025.
+
+This is adoption of the library I maintain. Obatirou authored the integration PR.
+
+Keth also adopted Garaga Zero's final-exponentiation code in [#1126](https://github.com/kkrt-labs/keth/pull/1126). The library update in [#1381](https://github.com/kkrt-labs/keth/pull/1381) covers BN254 and BLS12-381/KZG imports.
+
+I implemented a BN254 pairing-precompile prototype with Garaga in [Kakarot-SSJ #1020](https://github.com/kkrt-labs/kakarot-ssj/pull/1020). [My implementation commit](https://github.com/kkrt-labs/kakarot-ssj/commit/d505220e8e625f7333b88dbe5e033dd86a350400) includes input parsing, point validation, pairing logic, and tests.
+
+Enitrat also submitted [Kakarot #1595](https://github.com/kkrt-labs/kakarot/pull/1595) under the title “ecpairing by feltroidprime,” using Garaga. These two proposals remain open and were not merged.
+
+The [activity index](ACTIVITY.md) also records discussions about cryptographic precompiles and proposals that did not reach integration.
+
+## Noir/Honk and Bitcoin tooling
 
 | Project | Contribution and status |
 | --- | --- |
 | Aztec / Barretenberg | Merged UltraStarknet and UltraStarknetZK Honk flavors for Garaga integration. [#11489](https://github.com/AztecProtocol/aztec-packages/pull/11489). Later merged a Stark252 field-definition fix. [#17338](https://github.com/AztecProtocol/aztec-packages/pull/17338). These are C++ contributions. |
-| Kakarot | Merged jump-destination optimization. [#1034](https://github.com/kkrt-labs/kakarot/pull/1034). My uint-add work was incorporated by Clément Walter. [#1070](https://github.com/kkrt-labs/kakarot/pull/1070). |
-| Kakarot-SSJ | Merged elliptic-curve add and multiply. [#855](https://github.com/kkrt-labs/kakarot-ssj/pull/855). |
-| Keth | Merged secp256k1 verification/recovery with ECIP and Garaga, plus MSM calldata handling. [#291](https://github.com/kkrt-labs/keth/pull/291), [#690](https://github.com/kkrt-labs/keth/pull/690). |
 | Raito | Merged digest-conversion and Poseidon/Merkle optimizations in the Cairo Bitcoin client. [#157](https://github.com/starkware-bitcoin/raito/pull/157), [#312](https://github.com/starkware-bitcoin/raito/pull/312). |
 | starknet-rust | Suggested a rejection-sampling approach for private keys. The PR author adopted the method. [Discussion on #98](https://github.com/software-mansion/starknet-rust/pull/98#issuecomment-3898037898). |
 
@@ -162,7 +200,6 @@ The [activity index](ACTIVITY.md) also includes open proposals and public review
 | --- | --- |
 | [sp1-starknet-template](https://github.com/feltroidprime/sp1-starknet-template) | SP1 application template with Cairo verification through Garaga, Rust proof generation, documentation, and CI. Built from Succinct's template. |
 | [garaga-zero](https://github.com/feltroidprime/garaga-zero) | Historical Cairo Zero variant of Garaga for local proving. |
-| [zk-ecip-py](https://github.com/feltroidprime/zk-ecip-py) | Archived Python prototype implementing Liam Eagen's ECIP work, later integrated in Garaga. |
 | [builtins-hints](https://github.com/feltroidprime/builtins-hints) | Rust modular-arithmetic hints and Python AIR experiments. The prototype omits range checks. |
 | [cairo-perfs-snippets](https://github.com/feltroidprime/cairo-perfs-snippets) | Execution-cost experiments and comparisons of Cairo implementations. |
 | [cairo-skills](https://github.com/feltroidprime/cairo-skills) | Cairo development and profiling guides with compiler and performance examples. |

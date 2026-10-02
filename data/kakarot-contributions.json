@@ -1,0 +1,125 @@
+{
+  "snapshot_date": "2026-10-02",
+  "scope": "Additional public Kakarot/Keth credits and adoption evidence. These records do not change authored-PR or submitted-review counts. Library adoption and integration are attributed separately.",
+  "items": [
+    {
+      "repo": "kkrt-labs/kakarot",
+      "number": 407,
+      "url": "https://github.com/kkrt-labs/kakarot/pull/407",
+      "title": "[Precompiles] ecrecover",
+      "author": "ClementWalter",
+      "created_at": "2023-01-03T15:52:18Z",
+      "state": "closed",
+      "merged_at": "2023-01-05T10:21:51Z",
+      "credit_type": "credited_initial_implementation",
+      "source_urls": [
+        "https://github.com/kkrt-labs/kakarot/pull/407",
+        "https://github.com/kkrt-labs/kakarot/issues/357#issuecomment-1369202458"
+      ],
+      "scope": "Initial ecRecover work credited by a maintainer. PR finalization, tests and integration by ClementWalter.",
+      "status": "merged"
+    },
+    {
+      "repo": "kkrt-labs/kakarot-ssj",
+      "number": 880,
+      "url": "https://github.com/kkrt-labs/kakarot-ssj/pull/880",
+      "title": "feat: ecAdd / ecMul",
+      "author": "obatirou",
+      "created_at": "2024-08-28T11:38:50Z",
+      "state": "closed",
+      "merged_at": "2024-09-05T13:05:05Z",
+      "credit_type": "downstream_integration",
+      "source_urls": [
+        "https://github.com/kkrt-labs/kakarot-ssj/pull/880",
+        "https://github.com/kkrt-labs/kakarot-ssj/pull/855"
+      ],
+      "scope": "EVM wrappers around the BN254 arithmetic authored in feltroidprime PR 855.",
+      "status": "merged"
+    },
+    {
+      "repo": "kkrt-labs/kakarot",
+      "number": 1595,
+      "url": "https://github.com/kkrt-labs/kakarot/pull/1595",
+      "title": "feat: ecpairing by feltroidprime",
+      "author": "enitrat",
+      "created_at": "2024-11-09T04:15:15Z",
+      "state": "open",
+      "merged_at": null,
+      "credit_type": "credited_unmerged_proposal",
+      "source_urls": [
+        "https://github.com/kkrt-labs/kakarot/pull/1595",
+        "https://github.com/kkrt-labs/kakarot-ssj/pull/1020"
+      ],
+      "scope": "Garaga pairing prototype credited to feltroidprime. Open proposal, not merged.",
+      "status": "open"
+    },
+    {
+      "repo": "kkrt-labs/keth",
+      "number": 1126,
+      "url": "https://github.com/kkrt-labs/keth/pull/1126",
+      "title": "feat: final exponentiation from garaga-zero",
+      "author": "obatirou",
+      "created_at": "2025-03-27T13:16:16Z",
+      "state": "closed",
+      "merged_at": "2025-03-27T14:52:44Z",
+      "credit_type": "downstream_adoption",
+      "source_urls": [
+        "https://github.com/kkrt-labs/keth/pull/1126",
+        "https://github.com/kkrt-labs/keth/issues/983"
+      ],
+      "scope": "Adoption of Garaga Zero final-exponentiation code.",
+      "status": "merged"
+    },
+    {
+      "repo": "kkrt-labs/keth",
+      "number": 1339,
+      "url": "https://github.com/kkrt-labs/keth/pull/1339",
+      "title": "feat: use garaga for altbn128 pairing and remove unused altbn128 code",
+      "author": "obatirou",
+      "created_at": "2025-04-16T10:08:52Z",
+      "state": "closed",
+      "merged_at": "2025-04-16T12:10:41Z",
+      "credit_type": "downstream_adoption",
+      "source_urls": [
+        "https://github.com/kkrt-labs/keth/pull/1339",
+        "https://github.com/kkrt-labs/keth/pull/1339/files"
+      ],
+      "scope": "Adoption of Garaga Zero for the BN254 pairing precompile.",
+      "status": "merged"
+    },
+    {
+      "repo": "kkrt-labs/keth",
+      "number": 1381,
+      "url": "https://github.com/kkrt-labs/keth/pull/1381",
+      "title": "Update garaga-zero",
+      "author": "ClementWalter",
+      "created_at": "2025-04-18T15:51:28Z",
+      "state": "closed",
+      "merged_at": "2025-04-18T16:46:19Z",
+      "credit_type": "downstream_adoption",
+      "source_urls": [
+        "https://github.com/kkrt-labs/keth/pull/1381",
+        "https://github.com/kkrt-labs/keth/pull/1381/files"
+      ],
+      "scope": "Garaga Zero update covering BN254 and BLS12-381/KZG imports.",
+      "status": "merged"
+    },
+    {
+      "repo": "kkrt-labs/garaga-zero",
+      "number": 1,
+      "url": "https://github.com/kkrt-labs/garaga-zero/pull/1",
+      "title": "chore: setup uv",
+      "author": "obatirou",
+      "created_at": "2025-03-27T12:03:20Z",
+      "state": "closed",
+      "merged_at": "2025-03-27T13:09:44Z",
+      "credit_type": "downstream_packaging",
+      "source_urls": [
+        "https://github.com/kkrt-labs/garaga-zero/pull/1",
+        "https://github.com/kkrt-labs/keth/issues/983"
+      ],
+      "scope": "Packaging of the downstream Garaga Zero fork for Keth.",
+      "status": "merged"
+    }
+  ]
+}

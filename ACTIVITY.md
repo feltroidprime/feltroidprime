@@ -1326,6 +1326,24 @@ These records document reports, questions, and proposals. Closing an issue does 
 | kkrt-labs/kakarot | [#1070](https://github.com/kkrt-labs/kakarot/pull/1070) | candidate's code integrated by another author with tests | 2024-04-04 |
 | software-mansion/starknet-rust | [#98](https://github.com/software-mansion/starknet-rust/pull/98) | public technical recommendation adopted by PR author | 2026-02-19 |
 
+## Additional Kakarot / Keth credits and library adoption
+
+These records include initial work credited by maintainers, downstream integration, library adoption, and an open pairing proposal.
+
+Integration PR authors appear separately from the code or library contributor. Authored-PR and review counts remain unchanged.
+
+| Project | PR | PR author | Contribution or adoption | Status |
+| --- | --- | --- | --- | --- |
+| kkrt-labs/kakarot | [#407](https://github.com/kkrt-labs/kakarot/pull/407) | ClementWalter | Initial ecRecover work credited by a maintainer. PR finalization, tests and integration by ClementWalter. | merged |
+| kkrt-labs/kakarot-ssj | [#880](https://github.com/kkrt-labs/kakarot-ssj/pull/880) | obatirou | EVM wrappers around the BN254 arithmetic authored in feltroidprime PR 855. | merged |
+| kkrt-labs/kakarot | [#1595](https://github.com/kkrt-labs/kakarot/pull/1595) | enitrat | Garaga pairing prototype credited to feltroidprime. Open proposal, not merged. | open |
+| kkrt-labs/keth | [#1126](https://github.com/kkrt-labs/keth/pull/1126) | obatirou | Adoption of Garaga Zero final-exponentiation code. | merged |
+| kkrt-labs/keth | [#1339](https://github.com/kkrt-labs/keth/pull/1339) | obatirou | Adoption of Garaga Zero for the BN254 pairing precompile. | merged |
+| kkrt-labs/keth | [#1381](https://github.com/kkrt-labs/keth/pull/1381) | ClementWalter | Garaga Zero update covering BN254 and BLS12-381/KZG imports. | merged |
+| kkrt-labs/garaga-zero | [#1](https://github.com/kkrt-labs/garaga-zero/pull/1) | obatirou | Packaging of the downstream Garaga Zero fork for Keth. | merged |
+
+[Public source records](data/kakarot-contributions.json).
+
 ## External discussions and mentions
 
 Search scope excludes self-authored records, personal repositories, and Garaga. These are participation links, rather than claims of code authorship.
