@@ -1,0 +1,105 @@
+{
+  "snapshot_date": "2026-10-02",
+  "scope": "Selected public manifests referencing Garaga or a Garaga fork. Dependency evidence, not personal authorship or deployment evidence.",
+  "items": [
+    {
+      "repo": "EkuboProtocol/privacy-pools",
+      "found": true,
+      "manifest_url": "https://github.com/EkuboProtocol/privacy-pools/blob/main/Scarb.toml",
+      "blob_sha": "9b6564584cfc7fe83d76491aa826e951a67d179a",
+      "dependency_lines": [
+        "garaga = { git = \"https://github.com/keep-starknet-strange/garaga.git\", tag = \"v0.15.3\" }"
+      ],
+      "commit_sha": "fdaadcf673dfde5e22b173f4ab0a0bd071407682",
+      "snapshot_url": "https://github.com/EkuboProtocol/privacy-pools/blob/fdaadcf673dfde5e22b173f4ab0a0bd071407682/Scarb.toml"
+    },
+    {
+      "repo": "cartridge-gg/controller-cairo",
+      "found": true,
+      "manifest_url": "https://github.com/cartridge-gg/controller-cairo/blob/main/Scarb.toml",
+      "blob_sha": "02db9224e36e319f297ffffbf988ebc7d5e7b930",
+      "dependency_lines": [
+        "garaga = { git = \"https://github.com/keep-starknet-strange/garaga\", rev = \"c3db6b78efc0a4b8eb6a8c06df7f053257728ea7\" }"
+      ],
+      "commit_sha": "e3cb4d0e47ce686f9e8576916af6e00bfd89d8dc",
+      "snapshot_url": "https://github.com/cartridge-gg/controller-cairo/blob/e3cb4d0e47ce686f9e8576916af6e00bfd89d8dc/Scarb.toml"
+    },
+    {
+      "repo": "argentlabs/exploration-private-token",
+      "found": true,
+      "manifest_url": "https://github.com/argentlabs/exploration-private-token/blob/master/contracts/Scarb.toml",
+      "blob_sha": "3031379d6e1c33abc2fcd07b1dbd0b741c75e0af",
+      "dependency_lines": [
+        "garaga = { git = \"https://github.com/keep-starknet-strange/garaga.git\", tag = \"v0.18.0\" }"
+      ],
+      "commit_sha": "f63dc1e09482f295cfd9c366e17d254f865b1711",
+      "snapshot_url": "https://github.com/argentlabs/exploration-private-token/blob/f63dc1e09482f295cfd9c366e17d254f865b1711/contracts/Scarb.toml"
+    },
+    {
+      "repo": "NethermindEth/starknet-worldcoin-bridge",
+      "found": true,
+      "manifest_url": "https://github.com/NethermindEth/starknet-worldcoin-bridge/blob/main/state_bridge_l2/world_id_state_bridge/Scarb.toml",
+      "blob_sha": "6f91ef830180f28ff89df68a7f9fc4e57bfc1b95",
+      "dependency_lines": [
+        "garaga = { git = \"https://github.com/keep-starknet-strange/garaga.git\", tag = \"v0.18.0\" }"
+      ],
+      "commit_sha": "6e80cbf44c20801d45975b8e121a79de9b78e585",
+      "snapshot_url": "https://github.com/NethermindEth/starknet-worldcoin-bridge/blob/6e80cbf44c20801d45975b8e121a79de9b78e585/state_bridge_l2/world_id_state_bridge/Scarb.toml"
+    },
+    {
+      "repo": "HerodotusDev/hdp-cairo",
+      "found": true,
+      "manifest_url": "https://github.com/HerodotusDev/hdp-cairo/blob/main/Scarb.toml",
+      "blob_sha": "a948b229f64210e7b6dd6a4f0005a544e50c5a1b",
+      "dependency_lines": [
+        "garaga = { git = \"https://github.com/keep-starknet-strange/garaga.git\" }"
+      ],
+      "commit_sha": "5a64e65b0aee7dd8fadd708d73f4aa436c70f009",
+      "snapshot_url": "https://github.com/HerodotusDev/hdp-cairo/blob/5a64e65b0aee7dd8fadd708d73f4aa436c70f009/Scarb.toml"
+    },
+    {
+      "repo": "unionlabs/union",
+      "found": true,
+      "manifest_url": "https://github.com/unionlabs/union/blob/main/Scarb.toml",
+      "blob_sha": "80949a3e5aee3e907bf678e169d0b04f17b72c3f",
+      "dependency_lines": [
+        "garaga      = { git = \"https://github.com/keep-starknet-strange/garaga.git\", tag = \"v1.0.1\" }"
+      ],
+      "commit_sha": "031785bb6dc6b957c624e62bc64c184409c97d7b",
+      "snapshot_url": "https://github.com/unionlabs/union/blob/031785bb6dc6b957c624e62bc64c184409c97d7b/Scarb.toml"
+    },
+    {
+      "repo": "informalsystems/ibc-starknet",
+      "found": true,
+      "manifest_url": "https://github.com/informalsystems/ibc-starknet/blob/main/cairo-libs/Scarb.toml",
+      "blob_sha": "789c3228d3d295e50582fd092934d58bcba96f8f",
+      "dependency_lines": [
+        "garaga          = { git = \"https://github.com/keep-starknet-strange/garaga.git\", rev = \"ffb90e5\" }"
+      ],
+      "commit_sha": "c62de65042653232149a22c4dd54855175570da3",
+      "snapshot_url": "https://github.com/informalsystems/ibc-starknet/blob/c62de65042653232149a22c4dd54855175570da3/cairo-libs/Scarb.toml"
+    },
+    {
+      "repo": "BlockstreamResearch/pq-p2pkh",
+      "found": true,
+      "manifest_url": "https://github.com/BlockstreamResearch/pq-p2pkh/blob/main/stwo-cairo/Scarb.toml",
+      "blob_sha": "427aa6657dc0b038c62484e0e376ba99e216a267",
+      "dependency_lines": [
+        "garaga = { git = \"https://github.com/keep-starknet-strange/garaga.git\", rev = \"5c5859e6dc5515f542c310cb38a149602e774112\" }"
+      ],
+      "commit_sha": "2081f8a7e72fb744bc8a2f534a074e2def71f4a2",
+      "snapshot_url": "https://github.com/BlockstreamResearch/pq-p2pkh/blob/2081f8a7e72fb744bc8a2f534a074e2def71f4a2/stwo-cairo/Scarb.toml"
+    },
+    {
+      "repo": "starkware-bitcoin/starkstr",
+      "found": true,
+      "manifest_url": "https://github.com/starkware-bitcoin/starkstr/blob/main/packages/aggsig_checker/Scarb.toml",
+      "blob_sha": "e1480a344157d03552c07138d17f1c7fefc5d17e",
+      "dependency_lines": [
+        "garaga = { git = \"https://github.com/m-kus/garaga\", rev = \"dd7743b4d623eafde5a9671c387d098e2eca5b00\" }"
+      ],
+      "commit_sha": "e259ad278ac57b0024ee51d03f69761da0d5ebb2",
+      "snapshot_url": "https://github.com/starkware-bitcoin/starkstr/blob/e259ad278ac57b0024ee51d03f69761da0d5ebb2/packages/aggsig_checker/Scarb.toml"
+    }
+  ]
+}
